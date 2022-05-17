@@ -23,8 +23,7 @@ func (p *Peccary) Controller(ifc interface{}) {
 		hasOutput := false
 
 		pth := []string{camelCase(classElem.Name()), camelCase(m.Name)}
-		name := strings.ToLower(strings.Join(pth, "/"))
-
+		name := strings.Join(pth, "/")
 		for _, v := range p.handlers {
 			if v.Name == name {
 				log.Fatalf("Multiple controllers with same identifier found: %s", name)
